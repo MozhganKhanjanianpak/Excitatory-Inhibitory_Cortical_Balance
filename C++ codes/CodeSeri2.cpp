@@ -1,6 +1,6 @@
-/////////////////////////////
-// Implementation code for                    
-/////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+// Implementation code for seri 2 corresponding to 0.01 < eta < 0.1 with d_eta = 0.01       
+//////////////////////////////////////////////////////////////////////////////////
 using namespace std;
 
 #include <iostream>
@@ -12,18 +12,18 @@ using namespace std;
 #define linkState(x)  ( (x==0) ? 0 : 1)  // inline function
 
 #define N    2000   // Number of nodes
-#define p    0.1    // probability of connections in ER network
+#define p    0.1    // probability of connections in random network
 #define TE   5      // activation time of Exc. links
 #define TI   7      // activation time of Inh. links
 #define D    4     // thereshold value for firing
 #define tmax 20000    // maximum time
-#define Ecurrent   1.0
+#define Ecurrent   1.0 // corresponding to excitatory synaptic weight, i.e., W_E
 
 #define dEta     0.01   // eta step
 #define etaFinal 0.1  // end of eta space: dEta < eta < etaFinal 
 
 #define E    0.8    // percentage of Excitatory neurons
-#define Icurrent   4  //current of an active inhibitory synapse -> set it based on E value
+#define Icurrent   4  //corresponding to inhibitory synaptic weight, i.e., W_I
 
 
 int  A[N][N] = {0};               // Adjacency Matrix
