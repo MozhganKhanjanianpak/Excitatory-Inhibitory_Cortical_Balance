@@ -1,6 +1,6 @@
-/////////////////////////////
-// Implementation code for                    
-/////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+// Implementation code for seri 1 corresponding to  0.1 < eta < 1 with d_eta = 0.1       
+//////////////////////////////////////////////////////////////////////////////////
 using namespace std;
 
 #include <iostream>
@@ -12,25 +12,24 @@ using namespace std;
 #define linkState(x)  ( (x==0) ? 0 : 1)  // inline function
 
 #define N    2000   // Number of nodes
-#define p    0.1    // probability of connections in ER network
+#define p    0.1    // probability of connections in random network
 #define TE   5      // activation time of Exc. links
 #define TI   7      // activation time of Inh. links
 #define D    4     // thereshold value for firing
 #define tmax 20000    // maximum time
-#define Ecurrent   1.0
+#define Ecurrent   1.0  // corresponding to excitatory synaptic weight, i.e., W_E
 
 #define dEta     0.1   // eta step
 #define etaFinal 1  // end of eta space: dEta < eta < etaFinal 
 
 #define E    0.8    // percentage of Excitatory neurons
-#define Icurrent   4  //current of an active inhibitory synapse -> set it based on E value
-
+#define Icurrent   4  //corresponding to inhibitory synaptic weight, i.e., W_I
 
 int  A[N][N] = {0};               // Adjacency Matrix
 int node_state[N] = {0};          // state of neurons, including: 0=inactive , 1=active
 double node_input[N] = {0};          // neuron input
-int Link_counter[N][N]         = {0}; // including 0, 1, 2, ...,TE for 0<row<n_E and 0<col<N
-int Link_counter_updated[N][N] = {0}; // and 0, 1, 2, ...,TI for n_E<row<N and 0<col<N
+int Link_counter[N][N]         = {0}; // including 0, 1, 2, ...,TE 
+int Link_counter_updated[N][N] = {0}; // and 0, 1, 2, ...,TI 
 
 /********************************************/
 // Main
@@ -70,7 +69,7 @@ int main()
     int NL = 0;   // number of links
     
     //-----------------------------------------------
-    // making Adjacency matrix of ER network (Directed)
+    // making Adjacency matrix of random network (Directed)
     for ( int i=0 ; i<N; i++ ){
         for ( int j=0 ; j<N ; j++ ){
             if (j==i) continue;
