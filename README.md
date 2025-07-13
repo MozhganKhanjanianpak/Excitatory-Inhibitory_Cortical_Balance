@@ -1,3 +1,5 @@
+This code is part of the article "An 80/20 cortical balance stabilizes information-rich dynamics" to reproducing the results and figures.
+
 To run each C++ code (in folder C++ codes) , set the values of parameters and change the name of output files based on them.
 
 Data for reproducing Fig.1 are obtained while E=0.8 (percentage of Excitatory neurons) and Icurrent=4 (inhibitory synaptic weight)
